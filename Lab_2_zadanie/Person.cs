@@ -20,8 +20,9 @@ namespace Lab_2_zadanie
             this.age = age;
         }
 
-        public void Print(string prefix = "\t")
+        public virtual void Print(string prefix = "\t")
         {
+            Console.WriteLine($"{this.name} ({this.age} y.o.) {prefix}");
         }
 
     }

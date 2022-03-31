@@ -17,8 +17,12 @@ namespace Lab_2_zadanie
             this.count = count;
         }
 
-        public void Print(string prefix = "\t")
+        public override void Print(string prefix = "\t")
         {
+            string name = this.count == 1 ? "fruit" : "fruits";
+
+            base.Print();
+            Console.WriteLine($"({this.count} {name})");
         }
     }
 }

@@ -23,8 +23,23 @@ namespace Lab_2_zadanie
             this.products = products;
         }
 
-        public void Print(string prefix = "\t")
+        public void Print()
         {
+            Console.WriteLine($"Shop: {this.name}");
+
+            Console.WriteLine("-- People: --");
+
+            foreach (var people in people)
+            {
+                people.Print("\t");
+            }
+
+            Console.WriteLine("-- Products: --");
+
+            foreach (var product in products)
+            {
+                product.Print();
+            }
         }
     }
 }

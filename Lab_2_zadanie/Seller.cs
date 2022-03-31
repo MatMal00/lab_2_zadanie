@@ -11,8 +11,10 @@ namespace Lab_2_zadanie
         public Seller(string name, int age): base(name, age)
         {
         }
-        public void Print(string prefix = "\t")
+        public override void Print(string prefix = "\t")
         {
+            Console.Write($"{prefix} Seller: ");
+            base.Print();
         }
     }
 }

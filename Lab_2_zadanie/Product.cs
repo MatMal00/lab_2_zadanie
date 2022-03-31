@@ -16,8 +16,9 @@ namespace Lab_2_zadanie
         {
             this.name = name;
         }
-        public void Print(string prefix = "\t")
+        public virtual void Print(string prefix = "\t")
         {
+            Console.Write($"{prefix} {this.name}");
         }
     }
 }

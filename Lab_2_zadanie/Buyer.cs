@@ -8,28 +8,41 @@ namespace Lab_2_zadanie
 {
     internal class Buyer: Person
     {
-        protected List<Product> tasks = new();
+        protected List<Product> products = new();
 
         public Buyer(string name, int age): base(name, age)
         {
-            tasks = new List<Product>(); 
+            this.products = new List<Product>(); 
         }
 
         public void AddProduct(Product product)
         {
             if (product == null) return;
-            tasks.Add(product); 
+            products.Add(product); 
         }
 
         public void RemoveProduct(int index)
         {
-            if(index > this.tasks.Count - 1 || index < 0) return;
+            if(index > this.products.Count - 1 || index < 0) return;
 
-            tasks.RemoveAt(index);
+            products.RemoveAt(index);
         }
 
-        public void Print(string prefix = "\t")
+        public override void Print(string prefix = "\t")
         {
+            Console.Write($"{prefix} Buyer: ");
+            base.Print();
+
+            if(products.Count > 0)
+            {
+                Console.WriteLine($"{prefix}{prefix}-- Products: --");
+
+                foreach (Product product in products)
+                {
+                    Console.Write(prefix); 
+                    product.Print();
+                }
+            }
         }
     }
 }

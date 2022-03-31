@@ -17,8 +17,10 @@ namespace Lab_2_zadanie
             this.weight = weight;
         }
 
-        public void Print(string prefix = "\t")
+        public override void Print(string prefix = "\t")
         {
+            base.Print();
+            Console.WriteLine($"({this.weight} kg)");
         }
     }
 }
